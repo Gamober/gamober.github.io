@@ -1,0 +1,147 @@
+/* === Reset & Base === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;color:#1a1a2e;background:#f0f2f5;min-height:100vh}
+a{color:#2c7a4a;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* === Layout === */
+.app{max-width:800px;margin:0 auto;padding:12px}
+header{text-align:center;padding:16px 0;border-bottom:2px solid #e0e0e0;margin-bottom:20px}
+header h1{font-size:1.4rem;color:#1a1a2e}
+header .subtitle{font-size:.85rem;color:#666;margin-top:4px}
+footer{text-align:center;padding:24px 12px;font-size:.75rem;color:#999;border-top:1px solid #e0e0e0;margin-top:32px}
+
+/* === Nav === */
+.nav-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.lang-switch{display:flex;gap:4px}
+.lang-switch a{padding:4px 12px;border-radius:4px;font-size:.8rem;background:#fff;border:1px solid #ddd;color:#333}
+.lang-switch a.active{background:#2c7a4a;color:#fff;border-color:#2c7a4a}
+
+/* === Cards === */
+.card{background:#fff;border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card h2{font-size:1.1rem;margin-bottom:12px;color:#1a1a2e;border-bottom:1px solid #eee;padding-bottom:8px}
+.card h3{font-size:.95rem;margin-bottom:8px;color:#333}
+
+/* === Form === */
+.form-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+.form-group{flex:1;min-width:120px}
+.form-group label{display:block;font-size:.8rem;color:#555;margin-bottom:3px;font-weight:500}
+.form-group input,.form-group select{width:100%;padding:8px 10px;border:1px solid #ccc;border-radius:6px;font-size:.9rem;background:#fafafa;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:#2c7a4a;background:#fff}
+.form-group .unit{font-size:.7rem;color:#999;margin-left:2px}
+.form-group .hint{font-size:.7rem;color:#999;margin-top:2px}
+
+/* === Results === */
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:8px}
+.result-item{background:#f8faf8;border-radius:6px;padding:10px;text-align:center;border:1px solid #e8f0e8}
+.result-item .label{font-size:.72rem;color:#666}
+.result-item .value{font-size:1.3rem;font-weight:700;color:#2c7a4a}
+.result-item .sub{font-size:.7rem;color:#999}
+.result-item.highlight{background:#2c7a4a;color:#fff;border-color:#2c7a4a}
+.result-item.highlight .label,.result-item.highlight .sub{color:#cfc}
+.result-item.highlight .value{color:#fff}
+
+/* === Macro row === */
+.macro-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.macro-card{background:#f8faf8;border-radius:6px;padding:12px;border:1px solid #e8f0e8}
+.macro-card h4{font-size:.85rem;margin-bottom:4px}
+.macro-card .grams{font-size:1.1rem;font-weight:700;color:#2c7a4a}
+.macro-card .detail{font-size:.72rem;color:#888}
+
+/* === Meal plan === */
+.meal-list{list-style:none}
+.meal-item{background:#f8faf8;border-radius:6px;padding:12px;margin-bottom:8px;border-left:3px solid #2c7a4a}
+.meal-item.pre-workout{border-left-color:#e67e22}
+.meal-item.post-workout{border-left-color:#e74c3c}
+.meal-item.other{border-left-color:#3498db}
+.meal-item h4{font-size:.9rem;margin-bottom:4px;display:flex;justify-content:space-between}
+.meal-item .meal-macros{font-size:.8rem;color:#555}
+.meal-item .meal-note{font-size:.72rem;color:#999;margin-top:4px;font-style:italic}
+.meal-tag{font-size:.65rem;padding:2px 6px;border-radius:3px;color:#fff}
+.meal-tag.pre{background:#e67e22}
+.meal-tag.post{background:#e74c3c}
+.meal-tag.other{background:#3498db}
+
+/* === Rest day (blue theme) === */
+.rest-day .meal-item{border-left-color:#2980b9}
+.rest-day .card h2{color:#2980b9}
+
+/* === Food tables === */
+.food-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px -8px}
+.food-table{width:100%;border-collapse:collapse;font-size:.78rem;min-width:500px}
+.food-table th,.food-table td{padding:6px 8px;text-align:left;border-bottom:1px solid #eee}
+.food-table th{background:#f0f2f5;font-weight:600;font-size:.72rem;color:#555;position:sticky;top:0;white-space:nowrap}
+.food-table .cat-row td{background:#e8f0e8;font-weight:600;font-size:.75rem;color:#2c7a4a;padding:8px}
+.food-table .gi-hi{color:#e74c3c}
+.food-table .gi-mid{color:#e67e22}
+.food-table .gi-lo{color:#27ae60}
+.food-table tbody tr:hover{background:#fafcfa}
+.food-search{margin-bottom:8px}
+.food-search input{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;font-size:.85rem}
+.food-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px}
+.food-tab{padding:5px 10px;border-radius:4px;font-size:.75rem;border:1px solid #ddd;background:#fff;cursor:pointer}
+.food-tab.active{background:#2c7a4a;color:#fff;border-color:#2c7a4a}
+
+/* === FAQ === */
+.faq-item{border-bottom:1px solid #eee;padding:8px 0}
+.faq-q{cursor:pointer;font-size:.88rem;font-weight:500;padding:8px;display:flex;justify-content:space-between;align-items:center;color:#333}
+.faq-q:hover{color:#2c7a4a}
+.faq-q::after{content:'+';font-size:1.1rem;color:#999}
+.faq-q.open::after{content:'−'}
+.faq-a{display:none;padding:0 8px 12px;font-size:.82rem;color:#555;line-height:1.7;white-space:pre-line}
+.faq-a.open{display:block}
+
+/* === Tabs === */
+.tab-bar{display:flex;gap:2px;margin-bottom:12px;border-bottom:2px solid #e0e0e0}
+.tab-btn{padding:8px 16px;font-size:.85rem;border:none;background:none;cursor:pointer;color:#888;border-bottom:2px solid transparent;margin-bottom:-2px}
+.tab-btn.active{color:#2c7a4a;border-bottom-color:#2c7a4a;font-weight:600}
+.tab-btn:hover{color:#2c7a4a}
+
+/* === Callout === */
+.callout{background:#fef9e7;border-left:3px solid #f1c40f;padding:10px 14px;border-radius:0 6px 6px 0;font-size:.8rem;color:#7d6608;margin:10px 0}
+.callout.info{background:#eaf2f8;border-color:#3498db;color:#1a5276}
+.callout.warn{background:#fdedec;border-color:#e74c3c;color:#922b21}
+.callout.tip{background:#eafaf1;border-color:#2c7a4a;color:#145a32}
+
+/* === Responsive === */
+@media(max-width:480px){
+  .app{padding:8px}
+  .card{padding:12px}
+  .form-group{min-width:100px}
+  .result-grid{grid-template-columns:repeat(2,1fr)}
+  .macro-row{grid-template-columns:1fr}
+  header h1{font-size:1.2rem}
+}
+
+/* === Print === */
+@media print{
+  body{background:#fff}
+  .card{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .nav-row,.food-tabs,.food-search{display:none}
+}
+
+/* === Collapsible === */
+.collapse-toggle{cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center}
+.collapse-toggle::after{content:'▲';font-size:.7rem;transition:transform .2s}
+.collapse-toggle.collapsed::after{transform:rotate(180deg)}
+.collapse-content{overflow:hidden;transition:max-height .3s}
+.collapse-content.hidden{max-height:0!important}
+
+/* === Plan selector === */
+.plan-card{border:2px solid #e0e0e0;border-radius:8px;padding:12px;cursor:pointer;transition:all .2s}
+.plan-card:hover{border-color:#2c7a4a;background:#f8faf8}
+.plan-card.active{border-color:#2c7a4a;background:#eafaf1}
+.plan-card h3{font-size:.9rem;margin-bottom:4px}
+.plan-card p{font-size:.75rem;color:#888}
+
+/* === Weight unit toggle === */
+.unit-toggle{display:inline-flex;border-radius:4px;overflow:hidden;border:1px solid #ccc}
+.unit-toggle button{padding:4px 12px;border:none;background:#fff;font-size:.78rem;cursor:pointer}
+.unit-toggle button.active{background:#2c7a4a;color:#fff}
+
+/* === Mobile bottom nav === */
+.bottom-nav{display:none;position:sticky;bottom:0;background:#fff;border-top:1px solid #ddd;padding:6px 0;z-index:100}
+.bottom-nav a{flex:1;text-align:center;font-size:.7rem;color:#888;padding:4px}
+.bottom-nav a.active{color:#2c7a4a}
+@media(max-width:600px){.bottom-nav{display:flex}}

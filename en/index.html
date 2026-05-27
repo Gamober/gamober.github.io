@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<title>Fitness Diet Calculator — Cut & Bulk Meal Plans</title>
+<meta name="description" content="Fitness diet calculator based on HaoRen SongSong Excel suite. Auto-calculates macros for cutting and bulking.">
+<link rel="stylesheet" href="../css/style.css?v=1">
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Fitness Diet Calculator</h1>
+    <div class="subtitle">Based on HaoRen SongSong Excel Suite · Cut & Bulk Plans</div>
+  </header>
+
+  <nav class="nav-row">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="calc">Calculator</button>
+      <button class="tab-btn" data-tab="foods">Food Data</button>
+      <button class="tab-btn" data-tab="faq">FAQ</button>
+      <button class="tab-btn" data-tab="guide">Guide</button>
+    </div>
+    <div class="lang-switch">
+      <a href="../zh/">中文</a>
+      <a href="./" class="active" data-lang="en">EN</a>
+    </div>
+  </nav>
+
+  <!-- TAB: Calculator -->
+  <div class="tab-panel" id="panel-calc" style="display:block">
+
+    <!-- Personal Info -->
+    <div class="card">
+      <h2 class="collapse-toggle">Personal Info</h2>
+      <div class="collapse-content">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Gender</label>
+            <select id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Height <span class="unit">cm</span></label>
+            <input type="number" id="height" value="175" min="130" max="220" step="0.1">
+          </div>
+          <div class="form-group">
+            <label>Weight <span class="unit">kg</span></label>
+            <input type="number" id="weight" value="75" min="30" max="200" step="0.1">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Age <span class="unit">yr</span></label>
+            <input type="number" id="age" value="25" min="14" max="80">
+          </div>
+          <div class="form-group">
+            <label>Body Fat <span class="unit">% (optional)</span></label>
+            <input type="number" id="bodyFat" value="" min="3" max="50" step="0.1" placeholder="Optional">
+          </div>
+          <div class="form-group">
+            <label>Training Level</label>
+            <select id="trainingLevel">
+              <option value="novice">Novice</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row" id="plan-selector-area"></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Weekly Cardio <span class="unit">hrs/wk</span></label>
+            <input type="number" id="cardioHours" value="0" min="0" max="20" step="0.5">
+          </div>
+          <div class="form-group">
+            <label>Cardio Intensity</label>
+            <select id="cardioType">
+              <option value="moderate">Moderate (walk/cycle)</option>
+              <option value="intense">Intense (run/swim)</option>
+            </select>
+          </div>
+        </div>
+        <p class="callout" style="margin-top:8px">Default values are presets — enter your own data. Select different training times to see meal order changes.</p>
+      </div>
+    </div>
+
+    <!-- Results Summary -->
+    <div class="card" id="metrics-card">
+      <h2>Calorie Results</h2>
+      <div class="result-grid" id="results-metrics"></div>
+      <div id="weight-guide" style="font-size:.75rem;color:#888;margin-top:10px"></div>
+      <div id="cardio-note" style="font-size:.75rem;color:#888;margin-top:4px"></div>
+    </div>
+
+    <!-- Macros -->
+    <div class="card">
+      <h2>Daily Macros</h2>
+      <div id="results-macros"></div>
+    </div>
+
+    <!-- Training Day Meals -->
+    <div class="card">
+      <h2>Training Day Meals <span style="font-size:.7rem;color:#27ae60">● Training</span></h2>
+      <div id="meals-training"></div>
+    </div>
+
+    <!-- Rest Day Meals -->
+    <div class="card rest-day">
+      <h2>Rest Day Meals <span style="font-size:.7rem;color:#2980b9">● Rest</span></h2>
+      <div id="meals-rest"></div>
+    </div>
+
+  </div><!-- /panel-calc -->
+
+  <!-- TAB: Food Tables -->
+  <div class="tab-panel" id="panel-foods" style="display:none">
+    <div class="card"></div>
+  </div>
+
+  <!-- TAB: FAQ -->
+  <div class="tab-panel" id="panel-faq" style="display:none">
+    <div class="card"></div>
+  </div>
+
+  <!-- TAB: Guide -->
+  <div class="tab-panel" id="panel-guide" style="display:none">
+    <div class="card"></div>
+  </div>
+
+  <footer>
+    <p>Data from 好人松松 Bilibili & Excel Suite · Calculator for reference only</p>
+  </footer>
+</div>
+
+<script src="../js/i18n.js?v=1"></script>
+<script src="../js/engine.js?v=1"></script>
+<script src="../js/foods.js?v=1"></script>
+<script src="../js/faq.js?v=1"></script>
+<script src="../js/app.js?v=1"></script>
+</body>
+</html>
